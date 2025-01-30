@@ -14,7 +14,7 @@ USER root
 RUN ["sed", "-i", "s/SHA1, //g", "/usr/share/crypto-policies/DEFAULT/java.txt"]
 USER 1000
 COPY --from=tmp_builder /app/target/classes/keyfile.json /opt/keycloak/providers/keyfile.json
-COPY --from=tmp_builder /app/target/in2-keycloak-extension-1.1.1.jar /opt/keycloak/providers/
+COPY --from=tmp_builder /app/target/in2-keycloak-extension-1.2.0.jar /opt/keycloak/providers/
 COPY /themes /opt/keycloak/themes
 ENV VCISSUER_ISSUER_DID="did:key:z6MkqmaCT2JqdUtLeKah7tEVfNXtDXtQyj4yxEgV11Y5CqUa"
 ENV VCISSUER_ISSUER_KEY_FILE="/opt/keycloak/providers/keyfile.json"
